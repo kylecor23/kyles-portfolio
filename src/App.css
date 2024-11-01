@@ -4,8 +4,9 @@ body {
 	margin: 0;
 	padding: 0;
 	scroll-behavior: smooth;
-	background-color: #edf6f9; /* Global background color */
+	background-color: #edf6f9;
 	font-family: Arial, Helvetica, sans-serif;
+	color: #333;
 }
 body.no-scroll {
 	overflow: hidden;
@@ -27,7 +28,7 @@ h2 {
 }
 
 .button {
-	font-size: 1em; /* Set font size relative to screen */
+	font-size: 1em;
 	border: none;
 	background-color: #ffddd2;
 	color: black;
@@ -256,6 +257,7 @@ section {
 	text-align: center;
 	padding: 4rem 2rem;
 	background-color: #f4f4f4;
+	color: black;
 }
 
 .aboutSection p {
@@ -350,4 +352,71 @@ section {
 
 .icon-faLinkedin:hover {
 	color: #e29578;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+	h2 {
+		font-size: 1.5em;
+	}
+
+	section {
+		padding: 2rem 1rem;
+	}
+
+	.button {
+		font-size: 0.9em;
+		padding: 0.5em 1em;
+	}
+
+	.project {
+		grid-template-columns: 1fr;
+		margin: 1rem 0;
+	}
+
+	.projectDescription {
+		padding: 1rem;
+	}
+
+	.nav ul {
+		padding: 0.5rem;
+	}
+
+	.footer {
+		flex-direction: column;
+		text-align: center;
+	}
+
+	.contactIcons {
+		flex-direction: column;
+		align-items: center;
+	}
+
+	.contactIcons a {
+		margin: 5px 0;
+	}
+}
+
+/* Smaller screens (max-width 480px) */
+@media (max-width: 480px) {
+	h2 {
+		font-size: 1.2em;
+	}
+
+	.button {
+		font-size: 0.8em;
+		padding: 0.4em 0.8em;
+	}
+
+	.project {
+		padding: 0.5rem;
+	}
+
+	.projectName {
+		font-size: 1.2rem;
+	}
+
+	.footer {
+		padding: 0.5rem 1rem;
+	}
 }

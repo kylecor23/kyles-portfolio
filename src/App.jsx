@@ -9,7 +9,6 @@ function App() {
 
 	useEffect(() => {
 		const handleScroll = () => {
-			// Show header after scrolling past the homeLanding section
 			const homeLandingHeight =
 				document.querySelector(".homeLanding").offsetHeight;
 			if (window.scrollY > homeLandingHeight) {
@@ -27,7 +26,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<Header visible={headerVisible} /> {/* Pass headerVisible to Header */}
+			<Header visible={headerVisible} />
 			<Home />
 			<Footer />
 		</div>
