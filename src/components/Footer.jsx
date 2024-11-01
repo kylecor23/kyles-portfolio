@@ -13,7 +13,7 @@ function Footer() {
 					<FontAwesomeIcon icon={faGithub} size="2x" />
 				</a>
 				<a
-					href="https://linkedin.com/in/kylecor"
+					href="https://www.linkedin.com/in/kylejcorcoran"
 					target="_blank"
 					rel="noopener noreferrer"
 				>

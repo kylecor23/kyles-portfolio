@@ -1,7 +1,5 @@
 // src/components/Home.jsx
 import React, { useState } from "react";
-import CanvasBackground from "../components/CanvasBackground";
-import Footer from "../components/Footer";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
 	faCss3Alt,
@@ -9,11 +7,11 @@ import {
 	faJs,
 	faReact,
 	faNodeJs,
+	faLinkedin,
 } from "@fortawesome/free-brands-svg-icons";
+import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 
 function Home() {
-	const [showCanvas, setShowCanvas] = useState(false);
-
 	const scrollToSection = (sectionId) => {
 		const section = document.getElementById(sectionId);
 		if (section) {
@@ -25,23 +23,19 @@ function Home() {
 	return (
 		<div className="home">
 			<section className="homeLanding">
-				<h1>Hi, I'm Kyle Corcoran, a passionate web developer</h1>
-				{/* Toggle canvas background on button hover */}
-				<button
-					onMouseEnter={() => {
-						console.log("Mouse entered button, showing canvas");
-						setShowCanvas(true);
-					}}
-					onMouseLeave={() => {
-						console.log("Mouse left button, hiding canvas");
-						setShowCanvas(false);
-					}}
-					onClick={() => scrollToSection("about")}
-				>
+				<h1>Hi, I'm Kyle Corcoran, </h1>
+				<h1>a passionate web developer</h1>
+				<button className="button" onClick={() => scrollToSection("about")}>
 					View My Work
 				</button>
-				{showCanvas && <CanvasBackground />}{" "}
-				{/* Conditionally render the canvas background */}
+				{/* SVG Swoop Background */}
+				<svg viewBox="0 0 1440 320" className="swoop-svg">
+					<path
+						fill="#edf6f9"
+						fillOpacity="1"
+						d="M0,160 C300,50 1100,270 1440,120 L1440,320 L0,320 Z"
+					></path>
+				</svg>
 			</section>
 
 			{/* About Section */}
@@ -96,7 +90,26 @@ function Home() {
 								efficiently, providing a user-friendly interface and detailed
 								analytics.
 							</p>
-							<button>More Info</button>
+							<button
+								onClick={() =>
+									window.open(
+										"https://kylecor23.github.io/Ez-Workout/",
+										"_blank"
+									)
+								}
+							>
+								Check It Out
+							</button>
+							<button
+								onClick={() =>
+									window.open(
+										"https://github.com/kylecor23/Ez-Workout?tab=readme-ov-file",
+										"_blank"
+									)
+								}
+							>
+								More Info
+							</button>
 						</div>
 					</div>
 					<div className="project">
@@ -113,14 +126,23 @@ function Home() {
 								and engaging through a gamified approach with personalized
 								avatars.
 							</p>
-							<button>More Info</button>
+							<button
+								onClick={() =>
+									window.open(
+										"https://github.com/kylecor23/Fit-Monsters",
+										"_blank"
+									)
+								}
+							>
+								More Info
+							</button>
 						</div>
 					</div>
 					<div className="project">
 						<div className="projectName">Janelle Williams Counselling</div>
 						<div className="projectImage">
 							<img
-								src="/path/to/image.jpg"
+								src="/logo192.png"
 								alt="Janelle Williams Counselling website"
 							/>
 						</div>
@@ -130,7 +152,16 @@ function Home() {
 								Professional counseling services for individuals and families,
 								with a focus on mental health and well-being.
 							</p>
-							<button>Check it out</button>
+							<button
+								onClick={() =>
+									window.open(
+										"https://janellewilliamscounselling.com/",
+										"_blank"
+									)
+								}
+							>
+								Check it out
+							</button>
 						</div>
 					</div>
 				</div>
@@ -140,21 +171,32 @@ function Home() {
 			<section id="contact" className="contactSection">
 				<h2>Contact Me</h2>
 				<p>
-					Feel free to reach out via email at{" "}
-					<a href="mailto:kylecor@example.com">kylecor@example.com</a>
-					or connect with me on{" "}
+					You can contact me by sending an email or reaching out to me on
+					linkedin
+				</p>
+				<div className="contactIcons">
+					<a href="mailto:kylecorcoran9494@gmail.com">
+						<FontAwesomeIcon
+							icon={faEnvelope}
+							size="2x"
+							className="icon-faEnvelope"
+						/>
+					</a>
+					<br />
+
 					<a
-						href="https://linkedin.com/in/kylecor"
+						href="https://www.linkedin.com/in/kylejcorcoran"
 						target="_blank"
 						rel="noopener noreferrer"
 					>
-						LinkedIn
+						<FontAwesomeIcon
+							icon={faLinkedin}
+							size="2x"
+							className="icon-faLinkedin"
+						/>
 					</a>
-					.
-				</p>
+				</div>
 			</section>
-
-			<Footer />
 		</div>
 	);
 }
