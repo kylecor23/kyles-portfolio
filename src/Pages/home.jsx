@@ -19,6 +19,28 @@ function Home() {
 		}
 	};
 
+	function toggleExpand(e) {
+		const description = e.currentTarget;
+		description.classList.toggle("expanded");
+
+		if (description.classList.contains("expanded")) {
+			document.addEventListener("click", handleOutsideClick);
+		} else {
+			document.removeEventListener("click", handleOutsideClick);
+		}
+	}
+
+	function handleOutsideClick(e) {
+		const expandedDescription = document.querySelector(
+			".projectDescription.expanded"
+		);
+
+		if (expandedDescription && !expandedDescription.contains(e.target)) {
+			expandedDescription.classList.remove("expanded");
+			document.removeEventListener("click", handleOutsideClick);
+		}
+	}
+
 	return (
 		<div className="home">
 			<section className="homeLanding">
@@ -83,7 +105,7 @@ function Home() {
 						<div className="projectImage">
 							<img src="/EZ-Workout-Pic.png" alt="Home Page of EZ-Workout" />
 						</div>
-						<div className="projectDescription">
+						<div className="projectDescription" onClick={toggleExpand}>
 							<p>
 								A web application that helps you plan and track your workouts
 								efficiently, providing a user-friendly interface and detailed
@@ -119,7 +141,7 @@ function Home() {
 								alt="Home Page of Fit Monsters"
 							/>
 						</div>
-						<div className="projectDescription">
+						<div className="projectDescription" onClick={toggleExpand}>
 							<p>
 								Fit Monsters is a fitness tracker for kids, making exercise fun
 								and engaging through a gamified approach with personalized
@@ -146,7 +168,7 @@ function Home() {
 							/>
 						</div>
 
-						<div className="projectDescription">
+						<div className="projectDescription" onClick={toggleExpand}>
 							<p>
 								Professional counseling services for individuals and families,
 								with a focus on mental health and well-being.
