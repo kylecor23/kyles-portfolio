@@ -63,9 +63,9 @@ function Home() {
 			<section id="about" className="aboutSection">
 				<h2>About Me</h2>
 				<p>
-					With experience in creating responsive and dynamic websites. My focus
+					With experience in creating responsive and dynamic websites, my focus
 					is on delivering high-quality projects and continuously learning new
-					technologies.
+					technologies
 				</p>
 				{/* Technologies Section */}
 				<h3>Technologies I Use</h3>
